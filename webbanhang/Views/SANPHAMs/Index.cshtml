@@ -1,0 +1,87 @@
+﻿@model IEnumerable<webbanhang.Models.SANPHAM>
+<link rel="stylesheet" href="~/Content/css/admin.css">
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/adminlayout.cshtml";
+    @*Layout = "~/Views/Layout/homelayout.cshtml";*@
+}
+
+
+
+<p>
+    @*<button type="button" class="btn"></button>*@
+    @Html.ActionLink("CẬP NHẬT SẢN PHẨM MỚI", "Create",null, new { @class = "btn btn-success" })
+
+
+</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table" border="1">
+                <tr>
+                    <th>
+                        <div>TÊN SẢN PHẨM</div>
+                    </th>
+                    <th>
+                        <div>ĐƠN GIÁ</div>
+                    </th>
+                    <th>
+                        <div>NGÀY CẬP NHẬP</div>
+                    </th>
+                    <th>
+                        <div>CÁU HÌNH</div>
+                    </th>
+                    <th>
+                        <div>MÔ TẢ</div>
+                    </th>
+                    <th>
+                        <div>HÌNH ẢNH</div>
+
+                    </th>
+                    <th>
+                        <div>SỐ LƯỢNG</div>
+
+                    </th>
+
+
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TENSP)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DONGIA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.NGAYCAPNHAP)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CAUHINH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.MOTA)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HINHANH)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SOLUONGTON)
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.MASP },new { @class="btn btn-success"}) |
+                            @Html.ActionLink("Chi Tiết", "Details", new { id = item.MASP }, new { @class = "btn btn-primary" }) |
+                            @Html.ActionLink("Xóa", "Delete", new { id = item.MASP }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
+    </div>
+</div>

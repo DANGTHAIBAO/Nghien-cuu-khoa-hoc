@@ -1,0 +1,136 @@
+﻿@using webbanhang.Models
+@model THANHVIEN
+@{
+    ViewBag.Title = "DANGKI";
+    Layout = "~/Views/Layout/sanphamlayout.cshtml";
+
+
+}
+
+<link rel="stylesheet" href="~/Content/css/sanpham.css">
+<link rel="stylesheet" href="~/Content/css/dangki.css">
+
+
+<div class=" container">
+    <div class=" register">
+        <h1>ĐĂNG KÍ TÀI KHOẢN</h1>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <hr />
+            @Html.ValidationSummary(true)
+            <div class="row">
+
+                <div class="col-md-6 register-top-grid">
+                    <h3>THÔNG TIN CÁ NHÂN</h3>
+                    <div>
+                        <span>Tài Khoản</span>
+                        @Html.TextBoxFor(model => model.TAIKHOAN)
+                        @Html.ValidationMessageFor(model => model.TAIKHOAN)
+                    </div>
+                    <div>
+                        <span>Họ Tên</span>
+                        @Html.TextBoxFor(model => model.HOTEN)
+                        @Html.ValidationMessageFor(model => model.HOTEN)
+                    </div>
+                    <div>
+                        <span>Địa Chỉ</span>
+                        @Html.TextBoxFor(model => model.DIACHI)
+                        @Html.ValidationMessageFor(model => model.DIACHI)
+                    </div>
+                    <div>
+                        <span>Số Điện Thoại</span>
+                        @Html.TextBoxFor(model => model.SODIENTHOAI)
+                        @Html.ValidationMessageFor(model => model.SODIENTHOAI)
+                    </div>
+                    <div>
+                        <span>Email</span>
+                        @Html.TextBoxFor(model => model.EMAIL)
+                        @Html.ValidationMessageFor(model => model.EMAIL)
+                    </div>
+
+                </div>
+                <div class="col-md-6 register-bottom-grid">
+                    <h3>THÔNG TIN ĐĂNG NHẬP</h3>
+                    <div>
+                        <span>Mật Khẩu</span>
+                        @Html.Password("MATKHAU")
+                    </div>
+                    <div>
+                        <span>Nhập Lại Mật Khẩu</span>
+                        @Html.Password("NHAPLAIMATKHAU")
+                    </div>
+                    <div>
+                        <span>Câu Hỏi Bí Mật</span>
+                        @Html.DropDownList("CAUHOI")
+
+                        @Html.ValidationMessageFor(model => model.CAUHOI)
+                    </div>
+                    <div>
+                        <span>Câu Trả Lời</span>
+                        @Html.Password("CAUTRALOI")
+                    </div>
+                    @* <input type="submit" value="submit">*@
+                    <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+                        Đăng Ký
+                    </button>
+                </div>
+
+            </div>
+              <h2 style="color:#fff">@ViewBag.thongbao</h2>
+
+
+            <!--<div class="modal" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">-->
+
+                        <!-- Modal Header -->
+                        <!--<div class="modal-header">
+                            <h4 class="modal-title">Đăng ký</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>-->
+
+                        <!-- Modal body -->
+                        <!--<div class="modal-body">
+                           
+                        </div>-->
+
+                        <!-- Modal footer -->
+                        <!--<div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>-->
+
+
+
+
+        }
+        <div class="clearfix"> </div>
+
+    </div>
+</div>
+<style>
+    select#CAUHOI {
+        background: transparent;
+        color: #fff;
+        width: 100%;
+        padding: 7px;
+        margin: 1em 0;
+        background: none;
+        outline: none;
+        border: 1px solid #A09F9F;
+        -webkit-appearance: none;
+        color: #fff;
+        /* border: 1px solid; */
+        border-radius: 5px;
+    }
+    select#CAUHOI option {
+        color: #000;
+    }
+</style>
+
+
+

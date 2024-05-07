@@ -1,0 +1,122 @@
+﻿@using webbanhang.Models;
+@model IEnumerable<DONDATHANG>
+@{
+    ViewBag.Title = "dagiaodathanhtoan";
+    Layout = "~/Views/Layout/adminlayout.cshtml";
+    WebGrid gird = new WebGrid(source: Model, rowsPerPage: 10);
+}
+
+<h2>Quản Lý Đơn Hàng(Danh sách đơn hàng đã giao đã thanh toán)</h2>
+@*thể hiện dữ liệu qua control webgid*@
+<div class="chon">
+    <div class="row text-center">
+        <a href="@Url.Action("chuagiao","quanlydonhang")" class="quanly"> <div class="col-sm-4 khung1">Chưa Giao</div></a>
+        <a href="@Url.Action("chuathanhtoan","quanlydonhang")" class="quanly"> <div class="col-sm-4 khung2">Đã Chưa Giao và Chưa Thanh Toán</div></a>
+        <a href="@Url.Action("dagiaodathanhtoan","quanlydonhang")" class="quanly"> <div class="col-sm-4 khung3">Đã Giao Đã Thanh Toán</div></a>
+    </div>
+</div>
+
+@gird.GetHtml(
+    tableStyle: "girdTable",
+    headerStyle: "girdHead",
+    footerStyle: "girdFooter",
+    rowStyle: "girdRow",
+    alternatingRowStyle: "girdAltRow",
+    columns: gird.Columns(
+        gird.Column("MADDH", "Mã Đơn Đặt Hàng"),
+        gird.Column("MAKH", "Họ Tên Khách Hàng", format: p => p.MAKH != null ? p.KHACHHANG.TENKH : " "),
+         gird.Column("NGAYDAT", "Ngày Đặt"),
+          gird.Column("TINHTRANGGIAOHANG", "Tình Trạng Giao Hàng"),
+          gird.Column("NGAYGIAO", "Ngày Giao"),
+          gird.Column("DATHANHTOAN", "Đã Thanh Toán"),
+          gird.Column("UUDAI", "Ưu Đãi"),
+          gird.Column("DAHUY", "Đã Hủy"),
+            gird.Column(format: p => Html.ActionLink("Duyệt đơn hàng", "duyetdonhang", new { id = p.MADDH }))
+
+          )
+    )
+
+<style>
+    a.quanly {
+        /* font-size: 19px; */
+        font-weight: 600;
+    }
+    .chon {
+     
+        margin: 20px;
+        padding: 20px;
+    }
+    .khung1 {
+        background: #e05d6f;
+        /* background: black; */
+        padding: 20px;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    .khung3 {
+        background: #418bca;
+        /* background: black; */
+        padding: 20px;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+    .khung2 {
+        background: #16a085;
+        /* background: black; */
+        padding: 20px;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+
+        .khung:hover {
+            background: rgb(119, 119, 232);
+        }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    girdTable {
+        width: 100%;
+    }
+
+    table.girdTable {
+        width: 100%;
+        border: 1px solid;
+    }
+
+    thead {
+        /* padding: 20px; */
+        height: 59px;
+        /* padding: 20px; */
+        margin: 1px;
+    }
+
+    tr.girdHead {
+        border: 1px solid;
+        padding: 66px !important;
+        color: red;
+    }
+
+    th {
+        border: 1px solid;
+    }
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    img {
+        width: 70px;
+    }
+</style>
+
+
+

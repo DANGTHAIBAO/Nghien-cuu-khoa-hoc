@@ -1,0 +1,45 @@
+﻿@using webbanhang.Models;
+@{
+    ViewBag.Title = "tatcasanpham";
+    Layout = "~/Views/Layout/homelayout.cshtml";
+}
+
+@*<link rel="stylesheet" href="~/Content/css/main.css">*@
+
+@{ IEnumerable<SANPHAM> lstSP = (IEnumerable<SANPHAM>)ViewBag.lstSP;}
+
+
+<section id="section2">
+
+    <div class="container mt-3">
+        @*<h1>PRODUCT OVERVIEW</h1>
+        <br>
+
+        <ul class="nav nav-pills thea" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active mauden" data-bs-toggle="pill" href="#all">All Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mauden" data-bs-toggle="pill" href="#msi">Product MSI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mauden" data-bs-toggle="pill" href="#asus"> Product ASUS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mauden" data-bs-toggle="pill" href="#acer"> Product ACER</a>
+            </li>
+
+        </ul>*@
+
+        <div class="tab-content">
+            <div id="all" class="container tab-pane active">
+                <br>
+                <div class="row">
+
+                    @Html.Partial("sanphampartial", lstSP);
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

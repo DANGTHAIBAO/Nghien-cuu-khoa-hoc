@@ -1,0 +1,158 @@
+﻿@using webbanhang.Models;
+@model List<itemgiohang>
+@{
+    ViewBag.Title = "xemgiohang";
+    Layout = "~/Views/Layout/sanphamlayout.cshtml";
+
+
+}
+
+@if (Model == null)
+{
+    <h1>giỏ hàng rỗng</h1>
+}
+else
+{
+    <table style="color:#fff" class="table">
+        <tr>
+            <td>Mã SP</td>
+            <td>Tên SP</td>
+            <td>Hình ảnh</td>
+            <td>Số Lượng</td>
+            <td>Đơn Gía</td>
+            <td>Thành Tiền</td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.MASP</td>
+                <td>@item.TENSP</td>
+                <td><img src="@Url.Content($"~/Content/img/{item.HINHANH}")" alt="" width="50" height="50"></td>
+                <td>@item.SOLUONG</td>
+                <td>@item.DONGIA.ToString("#,##")</td>
+                <td>@item.THANHTIEN.ToString("#,##")</td>
+                <td>
+                    @Html.ActionLink("Sửa", "suagiohang", new { @MASP = item.MASP }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Xóa", "xoagiohang", new { @MASP = item.MASP }, new { @class = "btn btn-danger" })
+                </td>
+
+            </tr>
+        }
+
+
+
+    </table>
+
+
+
+
+    using (Html.BeginForm("dathang", "giohang"))
+    {
+        if (Session["TAIKHOAN"] == null)
+        {
+
+        
+        <div class="ThongTinMuaHang">
+            <table style="color:#fff" align="center" class="table">
+                <tr>
+                    <td align="center" colspan="2"><b>Thông tin Khách Hàng</b></td>
+                </tr>
+
+                <tr>
+                    <td>Họ Tên</td>
+                    <td>
+                        @Html.TextBox("TENKH")
+
+                        <p style="color:red" id="TB_TENKH"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa Chỉ</td>
+                    <td>
+                        @Html.TextArea("DIACHI")
+                        <p style="color:red" id="TB_DIACHI"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        @Html.TextBox("EMAI")
+                        <p style="color:red" id="TB_EMAIL"></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Số Điện Thoại</td>
+                    <td>
+                        @Html.TextBox("SODIENTHOAI")
+                        <p style="color:red" id="TB_SODIENTHOAI"></p>
+                    </td>
+                </tr>
+                
+            </table>
+        </div>
+        }
+        <div class="divDathang" style="text-align:right">
+            <input type="submit" value="Đặt Hàng" class="btn btn-danger" id="btndathang"  />
+
+           <a class="btn btn-success" href="@Url.Action("tatcasanpham", "sanpham")">Mua Tiếp</a>
+        </div>
+    }
+}
+
+<script>
+    $("#btndathang").click(function () {
+        var loi = 0;
+        if ($("#TENKH").val() == "") {
+            $("#TB_TENKH").text("Tên khách hàng không được bỏ trống");
+            // ngăn sự kiện submit đến sever
+            return false;
+        }
+        else {
+            loi++;
+            $("#TB_TENKH").text("");
+        }
+        if ($("#DIACHI").val() == "") {
+            $("#TB_DIACHI").text("Tên khách hàng không được bỏ trống");
+            // ngăn sự kiện submit đến sever
+            return false;
+        }
+        else {
+            loi++;
+            $("#TB_DIACHI").text("");
+        }
+        dinhdang = /^[0-9A-Za-z_]*@@[\w\d.]+\.\w{2,4}$/;
+        kiemtraemail = dinhdang.text($('EMAI').val());
+        if (!kiemtraemail) {
+            $("#TB_EMAIL").text("Email ko hợp lệ");
+            // ngăn sự kiện submit đến sever
+            return false;
+        }
+        if (loi != 0) {
+            return false;
+
+        }
+        if ($("#SODIENTHOAI").val() == "") {
+            $("#TB_SODIENTHOAI").text("Tên khách hàng không được bỏ trống");
+            // ngăn sự kiện submit đến sever
+            return false;
+        }
+        else {
+            loi++;
+            $("#TB_SODIENTHOAI").text("");
+        }
+        
+    });
+</script>
+<style>
+    .ThongTinMuaHang {
+        border: 1px soi;
+        border: 1px solid #fff;
+        overflow: hidden;
+        /* border-radius: 57px; */
+        width: 50%;
+    }
+</style>
+
+

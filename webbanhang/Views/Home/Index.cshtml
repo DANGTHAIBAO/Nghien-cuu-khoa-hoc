@@ -1,0 +1,480 @@
+﻿@using webbanhang.Models
+@model IEnumerable<SANPHAM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/homelayout.cshtml";
+}
+@{ IEnumerable<SANPHAM> lstmsi = ViewBag.lstmsi as IEnumerable<SANPHAM>;
+    IEnumerable<SANPHAM> lstacer = ViewBag.lstacer as IEnumerable<SANPHAM>;
+    IEnumerable<SANPHAM> lstasus = ViewBag.lstasus as IEnumerable<SANPHAM>;
+    IEnumerable<SANPHAM> lsttop = ViewBag.lsttop as IEnumerable<SANPHAM>;
+    }
+<link rel="stylesheet" href="~/Content/css/main.css">
+<section id="section1">
+    <div class="container">
+        <div class="row">
+            @Html.Partial("~/Views/sanpham/sanphampartialtop.cshtml", lsttop)
+         @*   <div class="col-lg-4 col-md-6 my-2">
+                <div class="box">
+                    <div class="anh"><img src="~/Content/img/laptop-msi-gaming-gf63-10sc-804vn-1-removebg-preview.png" alt=""></div>
+                    <div class="name_product">
+                        <div class="name1">Laptop MSI</div>
+                        <div class="name2">Shop Now</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 my-2">
+                <div class="box">
+                    <div class="anh"><img src="~/Content/img/asus.png" alt=""></div>
+                    <div class="name_product">
+                        <div class="name1">Laptop ASUS</div>
+                        <div class="name2">Shop Now</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 my-2">
+                <div class="box">
+                    <div class="anh"><img src="~/Content/img/acer.png" alt=""></div>
+                    <div class="name_product">
+                        <div class="name1">Laptop ACER</div>
+                        <div class="name2">Shop Now</div>
+                    </div>
+                </div>
+            </div>*@
+
+        </div>
+    </div>
+</section>
+<section id="section2">
+
+    <div class="container mt-3">
+        <h1>PRODUCT OVERVIEW</h1>
+        <br>
+
+        <ul class="nav nav-pills thea" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active mauden" data-bs-toggle="pill" href="#all">All Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mauden" data-bs-toggle="pill" href="#msi">Product MSI</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mauden" data-bs-toggle="pill" href="#asus"> Product ASUS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link mauden" data-bs-toggle="pill" href="#acer"> Product ACER</a>
+            </li>
+
+        </ul>
+
+        <div class="tab-content">
+            <div id="all" class="container tab-pane active">
+                <br>
+                <div class="row">
+                    @Html.Partial("~/Views/sanpham/sanphampartialIndex.cshtml", lstacer)
+                    @Html.Partial("~/Views/sanpham/sanphampartialIndex.cshtml", lstmsi)
+                    @Html.Partial("~/Views/sanpham/sanphampartialIndex.cshtml", lstasus)
+                </div>
+            </div>
+            <div id="msi" class="container tab-pane fade">
+                <br>
+                <div class="row">
+                    @Html.Partial("~/Views/sanpham/sanphampartialIndex.cshtml", lstmsi)
+                </div>
+            </div>
+            <div id="asus" class="container tab-pane fade">
+                <br>
+                <div class="row">
+                    @Html.Partial("~/Views/sanpham/sanphampartialIndex.cshtml", lstasus)
+                </div>
+            </div>
+
+            <div id="acer" class="container tab-pane fade">
+                <br>
+                <div class="row">
+                    @Html.Partial("~/Views/sanpham/sanphampartialIndex.cshtml", lstacer)
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="section3" class="admin pt-5">
+    <div class="bg-primary">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="admin_sash pb-1">Đánh giá laptop gaming MSI GL66 PULSE</div>
+                    <div class="thesash1 pb-1"> Pulse GL66 sở hữu thiết kế mới mẻ, rất khác so với những chiếc laptop của MSI xưa nay với mặt A được làm bằng nhôm màu xám nòng súng, bề mặt được xử lý sần mịn, khắc các đường đối xứng. Màu xám nòng súng và kiểu hoạt tiết này được thiết kế bởi một họa sĩ 3D người Bỉ và nó tương ứng với một nhân vật 3D được MSI đặt làm riêng cho dòng Pulse này. Logo MSI khắc chìm, không đèn đóm. Hệ thống các cổng kết nối trên Pulse GL66 vừa đủ với nhu cầu của một người dùng bình thường hay game thủ nhưng sẽ thiếu với những ai có nhu cầu cao hơn, điển hình là những ai muốn dùng chiếc máy này để làm công việc liên quan đến phim ảnh.</div>
+                    <div class="button_admin pb-1 pt-1">
+                        <button type="button" class="btn btn-primary rounded-pill py-2 mx-2 my-2">Buy Now</button>
+                        <button type="button" class="btn btn-danger rounded-pill py-2 mx-2 my-2">Preview </button>
+                        <button type="button" class="btn btn-info rounded-pill py-2 mx-2 my-2">Licenses</button>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    <iframe width="560" height="379" src="https://www.youtube.com/embed/55MZwKVGT2k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-primary2">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <iframe width="560" height="379" src="https://www.youtube.com/embed/F4WWdLTfGFE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-12 col-lg-6">
+                    <div class="admin_sash1 pb-1">Đánh giá laptop gaming Acer Nitro 5 2021</div>
+                    <div class="thesash1_1 pb-1"> Từ trước đến nay mỗi khi sử dụng Laptop đa phần chúng chỉ mát sau một thời gian đầu sử dụng, sau đó với các tác vụ khác như chơi game hay edit, photoshop, v.v… sẽ khiến cho máy nóng dần lên mỗi khi sử dụng dưới thời tiết nóng nực như một cực hình. Nhưng mọi nỗi lo đã được giải quyết trong phiên bản Acer Nitro 5 2021, với hệ thống tản nhiệt được nâng cấp đem đến những trải nghiệm mát mẻ khi các bạn sử dụng dù có chơi game hay làm gì đi chăng nữa. Ngoài ra với ngoại hình như một chiếc laptop gaming bạn sẽ có vẻ ngoài hầm hố, nhưng vẫn mát mẻ khi sử dụng, hãy cùng theo dõi thêm để thấy những điều bất ngờ các bạn sẽ có được nhé!</div>
+                    <div class="button_admin pb-1 pt-1">
+                        <button type="button" class="btn btn-primary rounded-pill py-2 mx-2 my-2">Buy Now</button>
+                        <button type="button" class="btn btn-danger rounded-pill py-2 mx-2 my-2">Preview </button>
+                        <button type="button" class="btn btn-info rounded-pill py-2 mx-2 my-2">Licenses</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<section id="section4">
+    <div class="container text-center deal">
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="day_deal">
+                    <ul>
+                        <li>
+                            <div class="time">
+                                <h2>02</h2>
+                                <span>DAYS</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="time">
+                                <h2>10</h2>
+                                <span>HOURS</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="time">
+                                <h2>34</h2>
+                                <span>MINS</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="time">
+                                <h2>60</h2>
+                                <span>SECS</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hot_deal"><h1>HOT DEAL THIS WEEK</h1></div>
+                <div class="hot_deal1"><h1>NEW COLLECTION UP TO 50% OFF</h1></div>
+                <button type="button" class="btn btn-danger">SHOP NOW</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="section5" class="check_out pt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div class="sale">TOP SELLING</div>
+
+                carousel
+                <div class="slide pt-4">
+
+
+                    <div class="container text-center my-1">
+                        <div class="row mx-auto my-auto justify-content-center">
+                            <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner" role="listbox">
+                                  
+                                      <div class="carousel-item active item1">
+            <div class="col-lg-3 col-md-4 boxto">
+                <div class="box1">
+                    <div class="anh"><img src="~/Content/img/acera7.png" alt=""></div>
+                    <div class="name_product2">
+                        <div class="namep1">Laptop Acer Gaming Aspire 7 A715-43G-R8GA NH.QHDSV.002</div>
+                        <div class="namep2"></div>
+                        <div class="price">17.990.000 ₫</div>
+                    </div>
+                    <div class="star1">
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div class="kengang"></div>
+                    </div>
+
+                    <div class="icon">
+                        <div>
+                            <i class="fa fa-heart tip1"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-exchange tip2"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye tip3"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+
+                        </div>
+                    </div>
+                    <div class="den"><button class="btn">ADD TO CARD</button></div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="carousel-item item1">
+            <div class="col-lg-3 col-md-4 boxto">
+                <div class="box1">
+                    <div class="anh"><img src="~/Content/img/asusz13.png" alt=""></div>
+                    <div class="name_product2">
+                        <div class="namep1">Laptop Asus Rog Flow Z13 GZ301ZC-LD110W</div>
+                        <div class="namep2"></div>
+                        <div class="price">43.490.000 ₫</div>
+                    </div>
+                    <div class="star1">
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div class="kengang"></div>
+                    </div>
+
+                    <div class="icon">
+                        <div>
+                            <i class="fa fa-heart tip1"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-exchange tip2"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye tip3"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+
+                        </div>
+                    </div>
+                    <div class="den"><button class="btn">ADD TO CARD</button></div>
+
+                </div>
+            </div>
+        </div>
+                                     <div class="carousel-item item1">
+            <div class="col-lg-3 col-md-4 boxto">
+                <div class="box1">
+                    <div class="anh"><img src="~/Content/img/msigf63.png" alt=""></div>
+                    <div class="name_product2">
+                        <div class="namep1">Laptop gaming MSI GF63 Thin 11SC 664VN</div>
+                        <div class="namep2"></div>
+                        <div class="price">16.990.000 ₫</div>
+                    </div>
+                    <div class="star1">
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div class="kengang"></div>
+                    </div>
+
+                    <div class="icon">
+                        <div>
+                            <i class="fa fa-heart tip1"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-exchange tip2"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye tip3"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+
+                        </div>
+                    </div>
+                    <div class="den"><button class="btn">ADD TO CARD</button></div>
+
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item item1">
+            <div class="col-lg-3 col-md-4 boxto">
+                <div class="box1">
+                    <div class="anh"><img src="~/Content/img/acer15-58.png" alt=""></div>
+                    <div class="name_product2">
+                        <div class="namep1">Laptop Gaming Acer Nitro 5 Tiger AN515-58-769J NH.QFHSV.003</div>
+                        <div class="namep2"></div>
+                        <div class="price">27.490.000 ₫</div>
+                    </div>
+                    <div class="star1">
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div class="kengang"></div>
+                    </div>
+
+                    <div class="icon">
+                        <div>
+                            <i class="fa fa-heart tip1"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-exchange tip2"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye tip3"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+
+                        </div>
+                    </div>
+                    <div class="den"><button class="btn">ADD TO CARD</button></div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="carousel-item item1">
+            <div class="col-lg-3 col-md-4 boxto">
+                <div class="box1">
+                    <div class="anh"><img src="~/Content/img/msibravo15.png" alt=""></div>
+                    <div class="name_product2">
+                        <div class="namep1">Laptop Gaming MSI Bravo 15 B5DD 276VN</div>
+                        <div class="namep2"></div>
+                        <div class="price">15.590.000 ₫</div>
+                    </div>
+                    <div class="star1">
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div class="kengang"></div>
+                    </div>
+
+                    <div class="icon">
+                        <div>
+                            <i class="fa fa-heart tip1"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-exchange tip2"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye tip3"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+
+                        </div>
+                    </div>
+                    <div class="den"><button class="btn">ADD TO CARD</button></div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="carousel-item item1">
+            <div class="col-lg-3 col-md-4 boxto">
+                <div class="box1">
+                    <div class="anh"><img src="~/Content/img/asusg15.png" alt=""></div>
+                    <div class="name_product2">
+                        <div class="namep1">Laptop ASUS ROG Strix G15 G513RC-HN090W</div>
+                        <div class="namep2"></div>
+                        <div class="price">25.790.000 ₫</div>
+                    </div>
+                    <div class="star1">
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div><i class="fa fa-star"></i></div>
+                        <div class="kengang"></div>
+                    </div>
+
+                    <div class="icon">
+                        <div>
+                            <i class="fa fa-heart tip1"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-exchange tip2"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-eye tip3"></i>
+                            <span class="tooltipp">ADD TO WISHLIST</span>
+
+                        </div>
+                    </div>
+                    <div class="den"><button class="btn">ADD TO CARD</button></div>
+                </div>
+
+            </div>
+        </div>
+                                    <div class="carousel-item item1">
+                                        <div class="col-lg-3 col-md-4 boxto">
+                                            <div class="box1">
+                                                <div class="anh"><img src="~/Content/img/asusz13.png" alt=""></div>
+                                                <div class="name_product2">
+                                                    <div class="namep1">Laptop Asus Rog Flow Z13 GZ301ZC-LD110W</div>
+                                                    <div class="namep2"></div>
+                                                    <div class="price">43.490.000 ₫</div>
+                                                </div>
+                                                <div class="star1">
+                                                    <div><i class="fa fa-star"></i></div>
+                                                    <div><i class="fa fa-star"></i></div>
+                                                    <div><i class="fa fa-star"></i></div>
+                                                    <div><i class="fa fa-star"></i></div>
+                                                    <div><i class="fa fa-star"></i></div>
+                                                    <div class="kengang"></div>
+                                                </div>
+
+                                                <div class="icon">
+                                                    <div>
+                                                        <i class="fa fa-heart tip1"></i>
+                                                        <span class="tooltipp">ADD TO WISHLIST</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa fa-exchange tip2"></i>
+                                                        <span class="tooltipp">ADD TO WISHLIST</span>
+                                                    </div>
+                                                    <div>
+                                                        <i class="fa fa-eye tip3"></i>
+                                                        <span class="tooltipp">ADD TO WISHLIST</span>
+
+                                                    </div>
+                                                </div>
+                                                <div class="den"><button class="btn">ADD TO CARD</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"><</span>
+                                </a>
+                                <a class="carousel-control-next bg-transparent w-aut" href="#recipeCarousel" role="button" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true">></span>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

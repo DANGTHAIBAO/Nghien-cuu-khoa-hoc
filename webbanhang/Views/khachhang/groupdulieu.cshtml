@@ -1,0 +1,15 @@
+﻿@using webbanhang.Models;
+@model List<THANHVIEN>
+@{
+    ViewBag.Title = "groupdulieu";
+}
+
+<h2>groupdulieu</h2>
+ @foreach(var Group in Model.GroupBy(n => n.LOAITHANHVIEN))
+{
+    <div>@Group.Key.TENLOAI</div>
+    foreach(var item in Group)
+     {
+        <p>@item.TAIKHOAN</p>
+     }
+}

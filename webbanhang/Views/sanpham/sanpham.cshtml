@@ -1,0 +1,77 @@
+﻿@using webbanhang.Models;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<SANPHAM>
+<link rel="stylesheet" href="~/Content/css/sanpham.css">
+@{
+    ViewBag.Title = "sanpham";
+    Layout = "~/Views/Layout/sanphamlayout.cshtml";
+}
+
+<section id="section2">
+
+    <div class="container mt-3">
+
+
+        <div class="tab-content">
+            <div id="all" class="container tab-pane active">
+                <br>
+                <div class="row">
+
+
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="col-lg-4 col-md-6 boxto">
+                            <a href="@Url.Action("chitietsanpham","sanpham",new {id=item.MASP })">
+                                <div class="box1">
+                                    <div class="anh"><img src="~/Content/img/@item.HINHANH" alt=""></div>
+                                    <div class="name_product2">
+                                        <div class="namep1">@item.TENSP</div>
+                                        <div class="namep2"></div>
+                                        <div class="price">@item.DONGIA.Value.ToString("#,##") ₫</div>
+
+                                    </div>
+                                    <div class="star1">
+                                        <div><i class="fa fa-star"></i></div>
+                                        <div><i class="fa fa-star"></i></div>
+                                        <div><i class="fa fa-star"></i></div>
+                                        <div><i class="fa fa-star"></i></div>
+                                        <div><i class="fa fa-star"></i></div>
+                                        <div class="kengang"></div>
+                                    </div>
+
+                                    <div class="icon">
+                                        <div>
+                                            <i class="fa fa-heart tip1"></i>
+                                            <span class="tooltipp">ADD TO WISHLIST</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa fa-exchange tip2"></i>
+                                            <span class="tooltipp">ADD TO WISHLIST</span>
+                                        </div>
+                                        <div>
+                                            <i class="fa fa-eye tip3"></i>
+                                            <span class="tooltipp">ADD TO WISHLIST</span>
+
+                                        </div>
+                                    </div>
+                                    <a href="@Url.Action("themgiohang","giohang",new { @MASP=item.MASP,@strURL=Request.Url.ToString()})">
+                                        <div class="den"><button class="btn">ADD TO CARD</button></div>
+                                    </a>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="pagination">
+    Trang @(Model.PageCount<Model.PageNumber?0:Model.PageNumber)/@Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("sanpham", "sanpham", new { page =page,@MALOAISP=ViewBag.MALOAISP }))
+</div>
+

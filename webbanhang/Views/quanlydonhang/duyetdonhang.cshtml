@@ -1,0 +1,106 @@
+﻿@using webbanhang.Models;
+@model DONDATHANG
+
+@{
+    ViewBag.Title = "duyetdonhang";
+    Layout = "~/Views/Layout/adminlayout.cshtml";
+}
+
+<div class="chon">
+    <div class="row text-center">
+
+        <a href="@Url.Action("chuagiao","quanlydonhang")" class="quanly"> <div class="col-sm-4 khung1">Chưa Giao</div></a>
+        <a href="@Url.Action("chuathanhtoan","quanlydonhang")" class="quanly"> <div class="col-sm-4 khung2">Đã Chưa Giao và Chưa Thanh Toán</div></a>
+        <a href="@Url.Action("dagiaodathanhtoan","quanlydonhang")" class="quanly"> <div class="col-sm-4 khung3">Đã Giao Đã Thanh Toán</div></a>
+    </div>
+</div>
+<h2>Thông tin khách hàng <font color="#f65e84">@Model.KHACHHANG.TENKH</font> </h2>
+@using (Html.BeginForm())
+{
+    <div class="chitietdonhang table">
+        @{ IEnumerable<CHITIETDONDATHANG> lstchitietdh = (IEnumerable<CHITIETDONDATHANG>)ViewBag.lstchitietdh;}
+        <table class="table" id="table">
+            @* phần thông ti đơn hàng*@
+            <tr>
+                <td colspan="4">
+                    <table style="width:100%">
+                        <tr>
+                            <td>MÃ đơn đặt hàng <b style="color:red;">@Model.MADDH @Html.Hidden("MADDH", @Model.MADDH)</b></td>
+                             <td>Mã khách hàng : <b style="color:red;">@Model.KHACHHANG.MAKH</b></td>
+                                <td>Tên khách hàng : <b style="color:red;">@Model.KHACHHANG.TENKH</b></td>
+                            <td>Ngày đặt : @Model.NGAYDAT.Value.ToString("dd/mm/yyyy")</td>
+                            <td>Đã thanh toán @Html.EditorFor(model => model.DATHANHTOAN)</td>
+                            <td>Đã giao (1/0) @Html.EditorFor(model => model.TINHTRANGGIAOHANG)</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Sản phẩm</b></td>
+                <td><b>Hình Anh</b></td>
+                <td><b>Số Lượng Đặt</b></td>
+                <td><b>Đơn Gía Đặt</b></td>
+
+            </tr>
+            @foreach (var item in lstchitietdh)
+            {
+                <tr>
+                    <td>@item.SANPHAM.TENSP</td>
+                    <td><img width="80px" height="80px" src="@Url.Content("~/Content/img/"+item.SANPHAM.HINHANH)" /></td>
+                    <td>@item.SOLUONG</td>
+                    <td>@item.DONGIA</td>
+                </tr>
+            }
+            <tr>
+                <td align="right" colspan="4">Tổng số lượng : @Model.CHITIETDONDATHANGs.Sum(n => n.SOLUONG) sản phẩm</td>
+            </tr>
+            <tr>
+                <td align="right" colspan="4">Tổng tiền : @Model.CHITIETDONDATHANGs.Sum(n => n.DONGIA).Value.ToString("#,##") Đồng</td>
+            </tr>
+        </table>
+        <input type="button" value="In đơn đặt hàng" id="btnindondathang" />
+        <input type="submit" value="Lưu Đơn Hàng" id="btn" />
+
+    </div>
+}
+
+<style>
+    a.quanly {
+        /* font-size: 19px; */
+        font-weight: 600;
+    }
+
+    .chon {
+        /* width: 100%; */
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .khung1 {
+        background: #e05d6f;
+        /* background: black; */
+        padding: 20px;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+
+    .khung3 {
+        background: #418bca;
+        /* background: black; */
+        padding: 20px;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+
+    .khung2 {
+        background: #16a085;
+        /* background: black; */
+        padding: 20px;
+        border: 1px solid;
+        border-collapse: collapse;
+    }
+
+    .khung:hover {
+        background: rgb(119, 119, 232);
+    }
+</style>

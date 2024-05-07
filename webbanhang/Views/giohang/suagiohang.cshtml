@@ -1,0 +1,59 @@
+﻿@using webbanhang.Models;
+@model itemgiohang
+@{
+    ViewBag.Title = "suagiohang";
+    Layout = "~/Views/Layout/sanphamlayout.cshtml";
+}
+
+@{ List<itemgiohang> lstgiohang = ViewBag.giohang as List<itemgiohang>;}
+
+<table style="color:#fff" class="table">
+    <tr>
+        <td>Mã SP</td>
+        <td>Tên SP</td>
+        <td>Hình ảnh</td>
+        <td>Số Lượng</td>
+        <td>Đơn Gía</td>
+        <td>Thành Tiền</td>
+    </tr>
+
+    @foreach (var item in lstgiohang)
+    {
+        // sản phẩm có mã sản phẩm được chính gửi từ tham số bên trang xem giỏ hàng
+        if (Model.MASP == item.MASP)
+        {
+            using (Html.BeginForm("capnhatgiohang", "giohang"))
+            {
+
+                <tr>
+                    <td>@item.MASP @Html.Hidden("MASP",item.MASP)</td>
+                    <td>@item.TENSP</td>
+                    <td>
+                        <img src="@Url.Content($"~/Content/img/{item.HINHANH}")" alt="" width="50" height="50">
+                    </td>
+                    <td>@Html.TextBox("SOLUONG",item.SOLUONG)</td>
+                    <td>@item.DONGIA.ToString("#,##")</td>
+                    <td>@item.THANHTIEN.ToString("#,##")</td>
+                    <td><input class="btn-btn-info" type="submit" value="Cập Nhập" /></td>
+
+                </tr>
+
+
+
+            }
+        }
+        else
+        {
+            <tr>
+                <td>@item.MASP</td>
+                <td>@item.TENSP</td>
+                <td><img src="@Url.Content($"~/Content/img/{item.HINHANH}")" alt="" width="50" height="50"></td>
+                <td>@item.SOLUONG</td>
+                <td>@item.DONGIA.ToString("#,##")</td>
+                <td>@item.THANHTIEN.ToString("#,##")</td>
+                <td>@Html.ActionLink("Sửa", "suagiohang", new { @MASP = item.MASP}, new { @class = "btn btn-success" })</td>
+            </tr>
+        }
+    }
+</table>   
+

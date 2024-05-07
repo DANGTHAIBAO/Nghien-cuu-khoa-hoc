@@ -1,0 +1,154 @@
+﻿@model webbanhang.Models.SANPHAM
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/adminlayout.cshtml";
+    @*Layout = "~/Views/Layout/homelayout.cshtml";*@
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+              
+                <dl class="dl-horizontal" border="1">
+                    <dt>
+                        <div>TÊN SẢN PHẨM</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TENSP)
+                    </dd>
+
+                    <dt>
+                        <div>ĐƠN GIÁ</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DONGIA)
+                    </dd>
+
+                    <dt>
+                        <div>NGÀY CẬP NHẬP</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NGAYCAPNHAP)
+                    </dd>
+
+                    <dt>
+                        <div>CÁU HÌNH</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.CAUHINH)
+                    </dd>
+
+                    <dt>
+                        <div>MÔ TẢ</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MOTA)
+                    </dd>
+
+                    <dt>
+                        <div>HÌNH ẢNH</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.HINHANH)
+                    </dd>
+
+                    <dt>
+                        <div>SỐ LƯỢNG TỒN</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SOLUONGTON)
+                    </dd>
+
+                    <dt>
+                        <div>LƯỢT XEM</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LUOTXEM)
+                    </dd>
+
+                    <dt>
+                        <div>LƯỢT BÌNH CHỌN</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LUOTBINHCHON)
+                    </dd>
+
+                    <dt>
+                        <div>LƯỢT BÌNH LUẬN</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LUOTBINHLUAN)
+                    </dd>
+
+                    <dt>
+                        <div>SỐ LẦN MUA</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.SOLANMUA)
+                    </dd>
+
+                    <dt>
+                        <div>MỚI</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.MOI)
+                        
+                    </dd>
+
+                    <dt>
+                        <div>ĐÃ XÓA</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.DAXOA)
+                    </dd>
+
+                    <dt>
+                        <div>TÊN LOẠI</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.LOAISANPHAM.TENLOAI)
+                    </dd>
+
+                    <dt>
+                        <div>TÊN NHÀ CUNG CẤP</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NHACUNGCAP.TENNHACC)
+                    </dd>
+
+                    <dt>
+                        <div>TÊN NƯỚC SẢN XUẤT</div>
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NHASANXUAT.TENNSX)
+                    </dd>
+
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MASP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

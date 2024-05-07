@@ -1,0 +1,39 @@
+﻿@model IEnumerable<webbanhang.Models.KHACHHANG>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <table border="1">
+            <tr>
+                <td>Mã khách hàng</td>
+                <td>tên khách hàng </td>
+                <td>địa chỉ </td>
+                <td>email</td>
+                <td>số điện thoại</td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MAKH</td>
+                    <td>@item.TENKH</td>
+                    <td>@item.DIACHI</td>
+                    <td>@item.EMAIL</td>
+                    <td>@item.SODIENTHOAI</td>
+                </tr>
+              }
+                
+            </table>
+       
+    </div>
+</body>
+</html>

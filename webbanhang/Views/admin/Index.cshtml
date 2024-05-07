@@ -1,0 +1,84 @@
+﻿@using webbanhang.Models
+@model IEnumerable<SANPHAM>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/adminlayout.cshtml";
+    WebGrid gird = new WebGrid(source: Model, rowsPerPage: 10);
+}
+<h2>Quản lý Sản Phẩm</h2>
+<p>
+    @*<button type="button" class="btn"></button>*@
+    @Html.ActionLink("CẬP NHẬT SẢN PHẨM MỚI", "themsanpham", null, new { @class = "btn btn-success themsp" })
+
+
+</p>
+
+@*thể hiện dữ liệu qua control webgid*@
+@gird.GetHtml(
+    tableStyle: "girdTable",
+    headerStyle: "girdHead",
+    footerStyle: "girdFooter",
+    rowStyle: "girdRow",
+    alternatingRowStyle: "girdAltRow",
+    columns:gird.Columns(
+        gird.Column("MASP","Mã Sản Phẩm"),
+        gird.Column("HINHANH", "Hình Anh", format: p => Html.Raw("<img src=\"../../Content/img/" + p.HINHANH + "\">")),
+         gird.Column("TENSP", "Tên Sản Phẩm"),
+          gird.Column("SOLUONGTON", "Số Lượng Tồn"),
+            gird.Column(format:p=>Html.ActionLink("Chỉnh Sửa","chinhsua",new {id=p.MASP })),
+            gird.Column(format: p => Html.ActionLink("Xóa", "xoa", new { id = p.MASP }))
+          )
+    )
+
+<style>
+    .themsp {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+        margin: 25px 0px;
+        font-size: 20px;
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    girdTable {
+        width: 100%;
+    }
+
+    table.girdTable {
+        width: 100%;
+        border: 1px solid;
+    }
+
+    thead {
+        /* padding: 20px; */
+        height: 59px;
+        /* padding: 20px; */
+        margin: 1px;
+    }
+
+    tr.girdHead {
+        border: 1px solid;
+        padding: 66px !important;
+        color: red;
+    }
+
+    th {
+        border: 1px solid;
+    }
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+   
+    img{
+        width:70px;
+    }
+</style>

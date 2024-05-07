@@ -1,0 +1,136 @@
+.bg-img1{
+    background-image: url(https://images.pexels.com/photos/8430313/pexels-photo-8430313.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    width: 100%;
+
+}
+.txtcontact{
+    text-align:center;
+    color: #fff;
+    padding-left: 15px;
+    padding-right:15px;
+    padding-top: 92px;
+    padding-bottom:92px;
+}
+.box1 {
+    /* border:1px solid #00000030; */
+    text-align: center;
+}
+.box2 {
+    /* border:1px solid #00000030; */
+    position: relative;
+} 
+
+*{
+    padding: 0;
+}
+.inpt[type="text"], .inpt[type="email"] {
+    border: 0.3px solid #69585824;
+    padding: 20px;
+    width: 80%;
+    color: #fff;
+    background: transparent;
+    border-radius: 5px;
+}
+.inpt2{
+    padding-top: 20px;
+ 
+}
+.inpt[type="text"] {
+    padding: 86px 15px;
+}
+.help{
+    height:300px;
+}
+.btnsubmit{
+    width:90%;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    color: #fff ;
+    border-radius: 30px;
+    background-color: black;
+    transition: 0.5s;
+}
+.btnsubmit:hover{
+    background-color: rgb(34, 58, 138);
+    
+}
+.padding{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.right1{
+    height: 633px;
+   /* position: absolute;*/
+    top: 15px;
+   
+}
+
+.main {
+    padding-top: 70px;
+    color: #fff;
+};
+.icon{
+    
+    color: #222;
+    
+    
+    
+}
+.location{
+    font-size: 30px;
+    
+    
+}
+.boxx{
+    padding:30px;
+}
+.addr, .sup, .phone{
+    margin-left: 20px;
+
+}
+.called,
+.lct,
+.mailsupport
+{
+    display: flex;
+    flex-wrap: wrap;
+    padding-left:93px;
+    
+}
+.fa-solid{
+    font-size: 30px;
+}
+.phone{
+    margin-left:20px;
+    
+}
+.sdt{
+    color:lightblue;
+    text-decoration: none;
+}
+.right1{
+    position: relative;
+}
+.called{
+    margin: 30px 0;
+}
+iframe {
+    width: 100%;
+    height: 415px;
+    margin-bottom: -30px;
+    border-radius: 0;
+    margin-top: -49px;
+}
+.bg-dark {
+    border-bottom: 1px solid rgb(255 255 255 / 20%) !important;
+    background: #000000a6 !important;
+}
+
+header {
+    height: 0% !important;
+}
+
+main {
+    margin-top: 115px;
+}

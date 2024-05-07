@@ -1,0 +1,24 @@
+﻿
+@using webbanhang.Models;
+@{
+    ViewBag.Title = "giatucaodenthap";
+    @*Layout = "~/Views/Layout/homelayout.cshtml";*@
+    Layout = "~/Views/Layout/sanphamlayout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/css/sanpham.css">
+@{ IEnumerable<SANPHAM> lstSP = (IEnumerable<SANPHAM>)ViewBag.lstSP;}
+<section id="section2">
+
+    <div class="container mt-3">
+        <div class="tab-content">
+            <div id="all" class="container tab-pane active">
+                <br>
+                <div class="row">
+
+                    @Html.Partial("sanphampartial", lstSP);
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

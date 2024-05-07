@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/css/header.css">
+    <link rel="stylesheet" href="~/Content/css/main.css">
+    <link rel="stylesheet" href="~/Content/css/footer.css">
+    <link rel="stylesheet" href="~/Content/css/particles.css">
+
+   @* <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>*@
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="icon" type="png" href="~/Content/img/logo1.png">
+    <title>HATP COMPUTER</title>
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="container-fluid px-5 py-2">
+                <a class="navbar-brand" href="javascript:void(0)"><img src="~/Content/img/logo1.2.png" alt="logo" class="logo"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+               @* <div class="blog_right_sidebar">
+                    <div class="container-fluid">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Nhập từ khóa bạn muốn tìm kiếm ....." aria-label="Search" />
+                            <button class="btn btn-outline" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+
+
+                    <div class="collapse navbar-collapse justify-content-center" id="mynavbar">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("tatcasanpham", "sanpham")">Shop</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("blog", "Home")">Blog</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="@Url.Action("contact", "Home")">Contact</a>
+                            </li>
+                        </ul>*@
+
+                        @* đăng nhập đăng ký*@
+                        @Html.Partial("~/Views/Layout/headerpartial.cshtml")
+                        @* giỏ hàng*@
+                        @Html.Action("giohangpartial", "giohang")
+
+
+
+                    </div>
+
+                </div>
+</nav>
+        <div id="anhnen">
+            <div id="particles">
+                <div class="count-particles">
+                    <span class="js-count-particles">--</span>
+                </div>
+
+                <!-- particles.js container -->
+                <div id="particles-js"></div>
+
+                <!-- scripts -->
+                <!-- stats.js -->
+            </div>
+            <div class="slide1">
+                <div class="row align">
+                    <div class="col-lg-3 introduce_header">
+                        <div class="introduce">HATP STORE</div>
+                        <p class="content_header">
+                            HATP đại diện cho một Công Ty ở TP HCM Lớn gồm 3 chi nhánh lớn ở TP HCM ,TP CẦN THƠ,TD HÀ NỘI .
+                            HATP chủ yếu chuyên về Laptop được chia làm 3 loại đó là MSI, ACER, ASUS .
+                            HATP được thành lập vào tháng 9 năm 2022. Dù mới thành lập nhưng HATP đã tạo ra nhiều bước tiến lớn trong lĩnh vực mua bán.
+                        </p>
+                        <button class="btn button_buy">BUY ON OPENSEA</button>
+                    </div>
+                    <div class="col-lg-9">
+
+                        <!-- slide header -->
+
+                        <div class="container slide_nav">
+                            <div class="row">
+                                <div class="col-sm-12 text-center">
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="side_bar">
+            <div class="left">
+                <div class="icon_big">
+                    <div class="left_icon">
+                        <div class="box-icon">
+                            <div class="icon_discord"><i class="fa-brands fa-discord"></i></div>
+                            <div class="name_icon">DISCORD</div>
+
+                        </div>
+                    </div>
+                    <div class="left_icon">
+                        <div class="box-icon">
+                            <div class="icon_discord"><i class="fa-brands fa-teamspeak"></i></div>
+                            <div class="name_icon">SUPPORT</div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="close">
+                    <div class="icon_close"><i class="fa-solid fa-xmark"></i></div>
+                </div>
+                <h2 class="name_left">HATP</h2>
+                <p class="left_introduce" style="color:#fff">
+                    Đại diện cho một Công Ty ở TP HCM Lớn gồm 3 chi nhánh lớn ở TP HCM ,TP CẦN THƠ,TD HÀ NỘI .
+                    HATP chủ yếu chuyên về Laptop được chia làm 3 loại đó là MSI, ACER, ASUS . HATP được thành lập
+                    vào tháng 9 năm 2022. Dù mới thành lập nhưng HATP đã tạo ra nhiều bước tiến lớn trong lĩnh vực mua bán.
+                </p>
+                <div class="copyright_left">
+                    Copyright ©2022 Designed & Developed by Nguyễn Tuấn Anh, Lê Hữu Phúc, Pham Thái Phi
+                </div>
+                <div class="pay_left">
+                    <a href=""> <i class="fa-brands fa-cc-visa"></i></a>
+                    <a href=""><i class="fa-sharp fa-solid fa-credit-card"></i></a>
+                    <a href=""> <i class="fa-brands fa-cc-paypal"></i></a>
+                    <a href=""><i class="fa-brands fa-cc-mastercard"></i></a>
+                    <a href=""><i class="fa-brands fa-cc-discover"></i></a>
+                    <a href=""><i class="fa-brands fa-cc-amex"></i></a>
+
+                </div>
+            </div>
+            <div class="right">right</div>
+        </div>
+       
+
+
+
+
+
+
+    </header>
+    <main>
+
+        @RenderBody();
+    </main>
+    <footer id="footer">
+        <div class="container py-5 px-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>ABOUT US</h4>
+                    <div class="content_footer">
+                        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</div>
+                        <div class="content2_footer">
+                            <div class="icon1_footer">
+                                <div class="icon_footer"></div>
+                                <div class="nd_footer">1734 Stonecoal Road</div>
+                            </div>
+                            <div class="icon1_footer">
+                                <div class="icon_footer"></div>
+                                <div class="nd_footer">1734 Stonecoal Road</div>
+                            </div>
+                            <div class="icon1_footer">
+                                <div class="icon_footer"></div>
+                                <div class="nd_footer">1734 Stonecoal Road</div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h4>CATEGORIES</h4>
+                    <div class="content_footer">
+                        <div>Hot deals</div>
+                        <div>Laptop MSI</div>
+                        <div>Laptop ASUS</div>
+                        <div>Laptop ACER</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h4>INFORMATION</h4>
+                    <div class="content_footer">
+                        <div>Hot deals</div>
+                        <div>Laptop MSI</div>
+                        <div>Laptop ASUS</div>
+                        <div>Laptop ACER</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <h4>SERVICE</h4>
+                    <div class="content_footer">
+                        <div>Hot deals</div>
+                        <div>Laptop MSI</div>
+                        <div>Laptop ASUS</div>
+                        <div>Laptop ACER</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom_footer">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="pay">
+                            <a href=""> <i class="fa-brands fa-cc-visa"></i></a>
+                            <a href=""><i class="fa-sharp fa-solid fa-credit-card"></i></a>
+                            <a href=""> <i class="fa-brands fa-cc-paypal"></i></a>
+                            <a href=""><i class="fa-brands fa-cc-mastercard"></i></a>
+                            <a href=""><i class="fa-brands fa-cc-discover"></i></a>
+                            <a href=""><i class="fa-brands fa-cc-amex"></i></a>
+
+                        </div>
+                        <div class="copyright">
+                            Copyright ©2022 Designed & Developed by Nguyễn Tuấn Anh, Lê Hữu Phúc, Pham Thái Phi
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </footer>
+    <div id="ontop">
+
+        <div class="row">
+            <div class="col-sm-12 rotate">
+                <div class="icon_scroll">
+                    <i class="fa-sharp fa-solid fa-chevron-up"></i>
+                </div>
+                <div class="top_scroll">Scroll To Top</div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="~/Content/js/slide.js"></script>
+
+
+    <script src="~/Content/js/particles/particles.js"></script>
+    <script src="~/Content/js/particles/app.js"></script>
+    <script src="~/Content/js/particles/chay.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0bd60bfbfc1d4fce8124aab2861f9a9f" Name="Diagram1" ZoomLevel="75">
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.BINHLUAN" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.CHITIETDONDATHANG" Width="1.5" PointX="8.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.CHITIETPHIEUNHAP" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.DONDATHANG" Width="1.5" PointX="6" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.KHACHHANG" Width="1.5" PointX="3.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.LOAISANPHAM" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.LOAITHANHVIEN" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.NHACUNGCAP" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.NHASANXUAT" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.PHIEUNHAP" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.SANPHAM" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QUANLYBANHANGModel.THANHVIEN" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_BINHLUAN_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_BINHLUAN_THANHVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_CHITIETDONDATHANG_DONDATHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_CHITIETDONDATHANG_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_CHITIETPHIEUNHAP_PHIEUNHAP" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_CHITIETPHIEUNHAP_SANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_DONDATHANG_KHACHHANG" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_KHACHHANG_THANHVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_SANPHAM_LOAISANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_THANHVIEN_LOAITHANHVIEN" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_PHIEUNHAP_NHACUNGCAP" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_SANPHAM_NHACUNGCAP" ManuallyRouted="false" />
+        <AssociationConnector Association="QUANLYBANHANGModel.FK_SANPHAM_NHASANXUAT" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

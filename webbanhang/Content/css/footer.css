@@ -1,0 +1,29 @@
+footer{
+    width: 100%;
+    background: #15161d;
+    border-top: 2px solid #cc00ff;
+    color: #b9babc;
+    box-shadow: 3px -9px 20px 0px #7000ff;
+}
+footer .content_footer{
+    color: #b9babc;
+    font-family: Segoe UI;
+    font-size: 16px;
+    font-size: 14px;
+    line-height: 27px;
+}
+.bottom_footer {
+    width: 100%;
+    background: #1e1f29;
+    padding: 30px 30px;
+}
+    .bottom_footer .pay a {
+        color: #484950;
+        font-size: 36px;
+        padding: 3px;
+    }
+    .bottom_footer .copyright {
+        font-family: monospace;
+        font-size: 12px;
+        color: #d1c0c0;
+    }

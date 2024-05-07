@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewBag.Title = "demoAjax";
+    Layout = "~/Views/Layout/homelayout.cshtml";
+}
+
+@Ajax.ActionLink("click", "tatcasanpham", new AjaxOptions{HttpMethod="GET", UpdateTargetId = "ketqua", InsertionMode=InsertionMode.Replace});
+<div id="ketqua">
+     
+</div>

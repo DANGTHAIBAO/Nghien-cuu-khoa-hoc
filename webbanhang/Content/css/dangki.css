@@ -1,0 +1,50 @@
+﻿.register {
+    padding: 4em 0;
+}
+    /*--register--*/
+    .register h1 {
+        font-size: 3em;
+        font-family: 'Lato', sans-serif;
+        color: #fff;
+        text-align: center;
+        font-weight: 600;
+        margin-bottom: 1em;
+    }
+
+.register-top-grid h3, .register-bottom-grid h3 {
+    font-size: 1.5em;
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    margin-bottom: 0.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.register-top-grid span, .register-bottom-grid span {
+    font-size: 1em;
+    display: block;
+    color: #A09F9F;
+}
+
+.register-top-grid input[type="text"], .register-bottom-grid input[type="password"] {
+    width: 100%;
+    padding: 1em;
+    margin: 1em 0;
+    background: none;
+    outline: none;
+    border: 1px solid #A09F9F;
+    -webkit-appearance: none;
+    color:#fff;
+}
+/*dăng xuất*/
+a.dangxuat_button {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 7px;
+    border-radius: 6px;
+    border: 2px solid #bc30e4;
+    font-weight: 500;
+    margin-left: 14px;
+    margin-right: 3px;
+}
